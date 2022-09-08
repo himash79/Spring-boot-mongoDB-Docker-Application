@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mongoDatabase:
+    image: mongo:latest
+    container_name: "mongoDatabase"  
+    ports:
+      - 27017:27017
+  spring-boot-mongo:
+    image: spring-boot-mongo:1.0
+    container_name: spring-boot-mongo
+    ports:
+      - 8080:8080
+    links:
+      - mongoDatabase

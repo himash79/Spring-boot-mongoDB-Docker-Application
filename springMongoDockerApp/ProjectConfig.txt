@@ -1,0 +1,27 @@
+================= Step 01 ===========================================
+01) Create Spring Project and create endpoint.
+
+================= CREATE MONGODB IMAGE ==============================
+01) Goto your project path and execute `docker pull mongodb:latest` 
+02) Check image details `docker images`
+03) Run Image `docker run -d -p 27017:27017 --name himashmongodb mongo:latest`
+04) Check run `docker ps`
+
+================= CREATE IMAGE FOR PROJECT ==========================
+01) Create Dockerfile and add related details
+02) build the project
+03) create image `docker build -t spring-boot-mongo:1.0 .`
+04) Check images `docker images`
+05) link project and db `docker run -p 8080:8080 --name spring-boot-mongo --link himashmongodb:mongo -d spring-boot-mongo:1.0`
+06) Expose the Restful-end points.
+07) Run mongodb queries in shell `docker exec -it mongoDatabase bash` then `mongosh`.
+
+================ DOCKER IMAGE CREATE USING DOCKER-COMPOSE (Step 02) =============
+01) Create Docker compose file and add related details.
+02) Execute `docker-compose up`.
+03) Expose the Restful-end points.
+04) Run mongodb queries in shell `docker exec -it mongoDatabase bash` then `mongosh`.
+
+============== OPTIONAL ===========================================
+01) If you need container rename `docker rename [name] [new name]`
+02) Remove Container `docker rm -f 6b70af85345a`

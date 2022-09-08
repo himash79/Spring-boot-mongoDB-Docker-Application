@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: Book
+      host: mongoDatabase
+      port: 27017
